@@ -1,0 +1,36 @@
+.released {
+	&__title {
+		margin-bottom: 60px;
+
+		@include mq('phone') {
+			margin-bottom: 30px;
+		}
+	}
+
+	&__accent {
+		color: $orange-500;
+	}
+
+	&__items {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 30px;
+		@include adaptiv-value('margin-bottom', 60, 30, 1);
+
+        @include mq('phone') {
+            grid-template-columns: 1fr;
+        }
+	}
+
+	&__item {
+		border-radius: 20px;
+		box-shadow: 0 0 20px rgba($black, 0.05), 20px 4px 40px rgba($black, 0.04);
+	}
+
+	&__button {
+		margin: 0 auto;
+		font-size: 18px;
+		border-radius: 16px;
+		padding: 16px 50px;
+	}
+}

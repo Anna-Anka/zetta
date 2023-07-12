@@ -1,0 +1,150 @@
+@include('./components/links/_head.html',
+{ 'title' : 'ZETTA — Фабрика кухкни | Отзывы' }
+)
+
+@include('./components/_header.html')
+
+@include('./components/_breadcrumbs.html', {
+'count' : '2',
+'1' : 'Главная',
+'current' : 'Отзывы'
+})
+
+@include('./components/_mobile-menu.html')
+
+@include('./components/modals/_modal-call.html')
+
+@include('./components/modals/_modal-froze.html')
+
+<section class="modal modal--review">
+    <div class="modal__body">
+        <div class="modal__content">
+            <div class="modal__top">
+                <button class="modal__close" type="button">
+                    <span class="sr-only">Закрыть окно</span>
+                </button>
+            </div>
+            <div class="modal__paste"></div>
+        </div>
+    </div>
+</section>
+
+<section class="modal modal--reviewsend">
+    <div class="modal__body">
+        <div class="modal__content">
+            <div class="modal__top">
+                <h2 class="modal__title">Оставить отзыв</h2>
+                <button class="modal__close" type="button">
+                    <span class="sr-only">Закрыть окно</span>
+                </button>
+            </div>
+            <form class="modal__form" data-validate data-thank="true">
+                <div class="modal__wrapper">
+                    <div class="modal__item">
+                        <label class="sr-only" for="froze-name">
+                            Ваше имя
+                        </label>
+                        <input class="modal__field" id="froze-name" name="y-name" type="text" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="modal__item">
+                        <label class="sr-only" for="froze-name">
+                            Электронная почта
+                        </label>
+                        <input class="modal__field" id="froze-name" name="y-email" type="email" placeholder="Электронная почта" required>
+                    </div>
+                    <div class="modal__item">
+                        <label class="sr-only" for="froze-tel">
+                            Номер телефона
+                        </label>
+                        <input class="modal__field" id="froze-tel" name="y-tel" type="tel" placeholder="Номер телефона" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required>
+                    </div>
+                    <div class="modal__item">
+                        <label class="sr-only" for="froze-tel">
+                            Номер договора
+                        </label>
+                        <input class="modal__field" id="froze-tel" name="y-dog" type="text" placeholder="Номер договора" required>
+                    </div>
+                    <div class="modal__item modal__item--full">
+                        <label class="sr-only" for="froze-tel">
+                            Заголовок комментария
+                        </label>
+                        <input class="modal__field" id="froze-tel" name="y-com" type="text" placeholder="Заголовок комментария" required>
+                    </div>
+                    <div class="modal__item modal__item--full">
+                        <label class="sr-only" for="froze-tel">
+                            Комментарий
+                        </label>
+                        <textarea name="text" id="" name="y-text" class="modal__field" placeholder="Комментарий"></textarea>
+                    </div>
+                </div>
+                <div class="modal__wrapper star__wrapper">
+                    <div class="modal__item">
+                        <label>Укажите оценку</label>
+                        <div class="rating-area">
+                            <input type="radio" id="star-5" name="y-rating" value="5">
+                            <label for="star-5" title="Оценка «5»"></label>
+                            <input type="radio" id="star-4" name="y-rating" value="4">
+                            <label for="star-4" title="Оценка «4»"></label>
+                            <input type="radio" id="star-3" name="y-rating" value="3">
+                            <label for="star-3" title="Оценка «3»"></label>
+                            <input type="radio" id="star-2" name="y-rating" value="2">
+                            <label for="star-2" title="Оценка «2»"></label>
+                            <input type="radio" id="star-1" name="y-rating" value="1">
+                            <label for="star-1" title="Оценка «1»"></label>
+                        </div>
+                    </div>
+                    <div class="modal__item modal__item--file">
+                        <label for="r-file">
+                            Прикрепите фото <img src="img/icons/paperclip.svg" alt="">
+                        </label>
+                        <input class="project-form__field" id="file" name="r-file" type="file" fileplaceholder="Загрузите файл или перетащите" multiple="">
+                    </div>
+                </div>
+                <button class="modal__button btn">Отправить заявку</button>
+                <div class="modal__agreement">
+                    <label>
+                        <input class="modal__check" type="checkbox" name="agree" checked>
+                        Я согласен (а) на
+                        <span class="modal__visible"></span>
+                    </label>
+                    <a class="modal__link" href="#">обработку персональных данных</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<div class="modal modal--thankr">
+    <div class="modal__body">
+        <div class="modal__content">
+            <div class="modal__top">
+                <span class="modal__title">
+                    Ваша отзыв принят! В ближашее время обработаем данные и опубликуем пост
+                </span>
+            </div>
+            <button class="modal__button btn" type="button">Отлично!</button>
+        </div>
+    </div>
+</div>
+
+@include('./components/modals/_modal-thank.html')
+
+<main class="main">
+    @include('./review-page/_review-top.html')
+    @include('./review-page/_review.html')
+</main>
+
+@include('./components/_forms.html', {
+'class' : 'design',
+'field' : 'tel',
+'title' : 'Закажите <span class="form__accent">бесплатную</span> разработку дизайн- проекта кухни',
+'text' : ''
+})
+
+@include('./components/_footer.html')
+
+@include('./components/links/_bottom.html')
+<!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js" integrity="sha512-nKZDK+ztK6Ug+2B6DZx+QtgeyAmo9YThZob8O3xgjqhw2IVQdAITFasl/jqbyDwclMkLXFOZRiytnUrXk/PM6A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQueryFormStyler/2.0.2/jquery.formstyler.min.js" integrity="sha512-NQWLm7ozXeOcDB639QSEzUWiNDEKD/mPKDIH256UYr9V7dwqF6OW4+1AEAVSaY6iaCaJzjjAR2GV6bPBYEzHig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script> -->

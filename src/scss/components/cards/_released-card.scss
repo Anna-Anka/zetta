@@ -1,0 +1,96 @@
+.released-card {
+	padding: 30px;
+	color: $dark-700;
+	font-size: 18px;
+	line-height: 1.1;
+	background-color: $white;
+	border-radius: 20px;
+
+	@include mq('phone') {
+		padding: 20px;
+		font-size: 14px;
+	}
+
+	&__picture {
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		height: 380px;
+		margin-bottom: 30px;
+
+		&::before {
+			@include open-img;
+			top: 30px;
+			right: 30px;
+			width: 45px;
+			height: 45px;
+			background-color: $white;
+			background-image: url('../img/svg/open-red.svg');
+			background-size: 22px 22px;
+			border-radius: 12px;
+			backdrop-filter: blur(12px);
+
+			@include mq('phone') {
+				display: none;
+			}
+		}
+
+		&:hover {
+			&::before {
+				opacity: 1;
+			}
+		}
+
+		@include mq('phone') {
+			height: 210px;
+			margin-bottom: 20px;
+		}
+	}
+
+	picture,
+	&__img {
+		width: 100%;
+		height: 100%;
+	}
+
+	&__img {
+		object-fit: cover;
+		border-radius: 20px;
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include mq('phone') {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+
+	&__price {
+		display: flex;
+		flex-wrap: wrap;
+		margin-right: 10px;
+
+		@include mq('phone') {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__subtext {
+		margin-right: 7px;
+		color: $grey-400;
+		font-weight: $fw-600;
+	}
+
+	&__number {
+		font-weight: $fw-800;
+	}
+
+	&__link {
+		padding: 10px 15px;
+		border-radius: 16px;
+	}
+}
