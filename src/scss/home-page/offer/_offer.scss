@@ -259,7 +259,15 @@
 
 		&--cashback {
 			position: relative;
+			margin: 0;
 			background-image: linear-gradient(3deg, #ff6e05 0%, #ff8c05 97.06%);
+
+			.container {
+				@include mq('xxl') {
+					padding: 0;
+					overflow: hidden;
+				}
+			}
 		}
 	}
 
