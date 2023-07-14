@@ -1,0 +1,128 @@
+.offer__slide--cashback-2 {
+	.offer-cashback {
+		&__content {
+			z-index: 4;
+
+			@include mq('xxl') {
+				align-items: center;
+				text-align: center;
+			}
+		}
+
+		&__label {
+			@include mq('xxl') {
+				margin-right: auto;
+				margin-left: auto;
+			}
+		}
+
+		&__title {
+			@include mq('xxl') {
+				margin-bottom: 8px;
+			}
+		}
+
+		&__images {
+			width: 70%;
+			overflow: hidden;
+
+			@include mq('xxl') {
+				position: relative;
+				width: 100%;
+				height: 70%;
+			}
+		}
+
+		&__decor {
+			position: absolute;
+			top: -341px;
+			right: -93px;
+			z-index: 1;
+			width: 285px;
+			height: 600px;
+			background-image: linear-gradient(165deg, #ff6e05 0%, #ff8c05 100%);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			transform: rotate(-41deg);
+
+			@include mq('xxl') {
+				top: unset;
+				right: unset;
+				bottom: -390px;
+				left: -13px;
+				transform: rotate(-230deg);
+			}
+
+			@include mq('phone') {
+				bottom: -333px;
+				left: -13px;
+				background-image: linear-gradient(176deg, #f76b14 0%, #b2450f 100%);
+				transform: rotate(-254deg);
+			}
+
+			&::before {
+				@include mq('phone', min) {
+					position: absolute;
+					bottom: -70px;
+					left: -50px;
+					width: 18%;
+					height: 100%;
+					background-image: linear-gradient(177deg, #f76b14 0%, #b2450f 100%);
+					filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.12));
+					content: '';
+				}
+			}
+		}
+
+		&__bg {
+			&::before,
+			&::after {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+				content: '';
+			}
+
+			&::before {
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(
+					180deg,
+					rgba(0, 0, 0, 0.09) 0%,
+					rgba(255, 114, 7, 0.9) 100%
+				);
+				opacity: 0.2;
+			}
+
+			&::after {
+				bottom: -117px;
+				width: 100%;
+				max-width: 400px;
+				height: 250px;
+				background-image: linear-gradient(111deg, #f76b14 0%, #b2450f 100%);
+				transform: rotate(-135deg);
+				filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.12));
+
+				@include mq('xxl') {
+					display: none;
+				}
+			}
+		}
+
+		&__person {
+			@include adaptive-value-master('right', 230, 22, 1880, 1310, 1);
+			@include adaptiv-value('max-width', 518, 295, 1);
+			@include adaptiv-value('height', 585, 333, 1);
+
+			@include mq('phone') {
+				right: 0;
+				max-width: 295px;
+				height: 333px;
+			}
+		}
+	}
+}

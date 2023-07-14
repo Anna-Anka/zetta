@@ -258,14 +258,64 @@
 		}
 
 		&--cashback {
+			background-image: linear-gradient(3deg, #ff6e05 0%, #ff8c05 97.06%);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
 			position: relative;
 			margin: 0;
-			background-image: linear-gradient(3deg, #ff6e05 0%, #ff8c05 97.06%);
 
 			.container {
 				@include mq('xxl') {
 					padding: 0;
 					overflow: hidden;
+				}
+			}
+		}
+
+		&--cashback-2 {
+			@include mq('xxl', min) {
+				background-color: transparent;
+				background-image: none;
+			}
+
+			&::after,
+			&::before {
+				position: absolute;
+				content: '';
+
+				@include mq('xxl') {
+					display: none;
+				}
+			}
+
+			&::after {
+				left: 0;
+				z-index: 2;
+				width: 49%;
+				height: 100%;
+				background-image: url('../img/offer/cashback-2/arrow.svg');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+
+				@media screen and (max-width: 1400px) {
+					width: 53%;
+				}
+			}
+
+			&::before {
+				bottom: -21%;
+				left: -8%;
+				z-index: 3;
+				width: 400px;
+				height: 400px;
+				background-color: $yellow-400;
+				border-radius: 50%;
+				filter: blur(222px);
+
+				@include mq('xxl') {
+					display: none;
 				}
 			}
 		}
@@ -349,3 +399,5 @@
 		}
 	}
 }
+
+// ! На первом кешбеке убрать черную линию и на планшете левый угол поднять чуть выше
