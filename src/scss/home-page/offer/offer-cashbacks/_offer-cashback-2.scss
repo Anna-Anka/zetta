@@ -7,6 +7,12 @@
 				align-items: center;
 				text-align: center;
 			}
+
+			@include mq('phone') {
+				max-width: 360px;
+				margin-right: auto;
+				margin-left: auto;
+			}
 		}
 
 		&__label {
@@ -55,8 +61,8 @@
 			}
 
 			@include mq('phone') {
-				bottom: -333px;
-				left: -13px;
+				bottom: -400px;
+				left: 46px;
 				background-image: linear-gradient(176deg, #f76b14 0%, #b2450f 100%);
 				transform: rotate(-254deg);
 			}

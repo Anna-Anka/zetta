@@ -299,6 +299,15 @@
 			}
 		}
 
+		&--cashback-1,
+		&--cashback-2 {
+			.container {
+				@include mq('phone') {
+					max-width: 100%;
+				}
+			}
+		}
+
 		&--cashback-1 {
 			&::before {
 				position: absolute;
