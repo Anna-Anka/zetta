@@ -33,6 +33,30 @@
 	&__slider {
 		position: relative;
 		z-index: 0;
+		min-height: 700px;
+
+		@include mq('xl') {
+			height: 964px;
+		}
+
+		@include mq('phone') {
+			height: 700px;
+		}
+	}
+
+	&__slide {
+		@include mq('xxl', min) {
+			display: flex;
+			justify-content: center;
+		}
+	}
+
+	.swiper-wrapper {
+		align-items: stretch;
+	}
+
+	.swiper-slide {
+		height: auto;
 	}
 
 	&__box {
@@ -258,17 +282,41 @@
 		}
 
 		&--cashback {
+			position: relative;
+			margin: 0;
 			background-image: linear-gradient(3deg, #ff6e05 0%, #ff8c05 97.06%);
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
-			position: relative;
-			margin: 0;
 
 			.container {
+				height: 100%;
+
 				@include mq('xxl') {
 					padding: 0;
 					overflow: hidden;
+				}
+			}
+		}
+
+		&--cashback-1 {
+			&::before {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				z-index: 2;
+				width: 100%;
+				height: 100%;
+				background-image: linear-gradient(3deg, #ff6e05 0%, #ff8c05 97.06%);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+				content: '';
+				clip-path: polygon(104% 0, 0% 100%, 100% 100%);
+				@include adaptive-value-master('max-width', 295, 240, 1880, 1310, 1);
+
+				@include mq('xxl') {
+					display: none;
 				}
 			}
 		}
@@ -318,6 +366,11 @@
 					display: none;
 				}
 			}
+		}
+
+		&--cashback-3 {
+			background-color: $pink-300;
+			background-image: none;
 		}
 	}
 
@@ -376,8 +429,11 @@
 	}
 
 	&__text {
-		@include adaptiv-value('margin-bottom', 25, 12, 1);
 		@include adaptiv-value('font-size', 16, 12, 1);
+
+		&:not(:last-child) {
+			@include adaptiv-value('margin-bottom', 25, 12, 1);
+		}
 
 		p {
 			&:not(:last-child) {
@@ -399,5 +455,3 @@
 		}
 	}
 }
-
-// ! На первом кешбеке убрать черную линию и на планшете левый угол поднять чуть выше
