@@ -127,10 +127,12 @@
 	}
 
 	&__link.btn--more {
+		padding: 14px 50px 14px 23px;
 		color: $orange-500;
 		background-color: $white;
 
 		&::before {
+			right: 24px;
 			filter: invert(59%) sepia(79%) saturate(1102%) hue-rotate(356deg)
 				brightness(103%) contrast(104%);
 
@@ -147,7 +149,7 @@
 	}
 
 	&__link.btn--border {
-		padding: 14px 33px;
+		padding: 14px 23px;
 		color: $white;
 		font-weight: $fw-700;
 		border-color: $white;
