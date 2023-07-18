@@ -62,17 +62,32 @@
 		}
 
 		&__link.btn--more {
+			padding: 14px 50px 14px 23px;
 			color: $white;
 			background-color: $orange-500;
 
 			&::before {
+				right: 24px;
 				filter: none;
+
+				@include mq('phone') {
+					right: 18px;
+				}
+			}
+
+			@include mq('phone') {
+				padding: 8px 23px 8px 17px;
 			}
 		}
 
 		&__link.btn--border {
+			padding: 14px 23px;
 			color: $dark-700;
 			border-color: $dark-700;
+
+			@include mq('phone') {
+				padding: 8px 23px;
+			}
 		}
 
 		&__content {
