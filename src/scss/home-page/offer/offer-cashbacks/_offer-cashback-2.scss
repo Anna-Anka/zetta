@@ -28,6 +28,10 @@
 			}
 		}
 
+		&__text {
+			font-weight: $fw-400;
+		}
+
 		&__images {
 			width: 70%;
 			overflow: hidden;
